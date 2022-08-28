@@ -292,7 +292,8 @@ export default {
         const price = exchangeData[ticker.name.toUpperCase()];
 
         ticker.price = price ?? "-";
-
+        if (ticker.name === this.sel.name) this.graph.push(this.sel.price);
+        console.log(this.sel.price);
         this.setLocalKey(this.tickers, "tickers-list");
       });
     },
